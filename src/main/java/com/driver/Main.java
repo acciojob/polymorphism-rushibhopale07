@@ -1,25 +1,29 @@
 package com.driver;
 
+import java.util.Scanner;
+
 public class Main {
-
-    public static void main(String[] args)
+    public static class Product
     {
-        Product p= new Product();
-        System.out.println(p.product(5, 6));
-        System.out.println(p.product(4,5,6));
-        System.out.println(p.product(3.4,5.6));
-    }
-}
-class Product
-{
-    public static int product(int x, int y) {
-        return x*y;
-    }
-    public static int product(int x, int y, int z) {
+        public int product(int x, int y) {
+            return x*y;
+        }
+        public int product(int x, int y, int z) {
 
-        return x*y*z;
+            return x*y*z;
+        }
+        public double product(double x, double y) {
+            return x*y;
+        }
     }
-    public static double product(double x, double y) {
-        return x*y;
+    public static void main(String[ ] args)
+    {
+        Scanner sc= new Scanner(System.in);
+        Product p= new Product();
+        System.out.println(p.product(sc.nextInt(),sc.nextInt() ));
+        System.out.println(p.product(sc.nextInt(),sc.nextInt(),sc.nextInt()));
+        System.out.println(p.product(sc.nextDouble(),sc.nextDouble()));
     }
+
+
 }
